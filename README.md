@@ -1,36 +1,31 @@
 # Pawstagram 📸🐾
 
-A modern Android social media app built with Jetpack Compose for sharing pet photos and connecting with pet lovers. Pawstagram combines beautiful UI design with powerful backend services for a seamless user experience.
+Pawstagram is an android app where pet lovers can share cute moments of their pets, Built with Kotlin and Jetpack Compose which focuses on delivering a smooth, modern, and joyful social experience for pet owners.
 
-## ✨ Features
+##  Features
 
-- 🔐 **Authentication**
+-  **Authentication**
   - Email/Password sign-up and sign-in
-  - Google Sign-In support
   - Password reset functionality
-  - Secure user profile management
 
-- 📱 **Feed & Posts**
+-  **Feed & Posts**
   - Browse posts in a beautiful feed
   - Upload photos with captions and hashtags
-  - Like posts (with red heart animation)
+  - Like posts
   - Real-time post updates
-  - Empty state handling
 
-- 🎨 **UI/UX**
+-  **UI/UX**
   - Modern Material Design 3
   - Dark mode support
-  - Smooth animations and transitions
   - Responsive design
-  - Professional color scheme (Orange/Amber & Yellow)
   - Custom logo branding
 
-- 🌐 **Backend Services**
-  - Cloudinary for image storage (free tier: 25GB storage, 25GB bandwidth/month)
+-  **Backend Services**
+  - Cloudinary for image storage
   - Firebase Firestore for post metadata
   - Firebase Authentication
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Language**: Kotlin
 - **UI Framework**: Jetpack Compose
@@ -48,48 +43,18 @@ A modern Android social media app built with Jetpack Compose for sharing pet pho
   - Room (Local Database - optional)
   - Kotlin Coroutines & Flow
 
-## 📋 Prerequisites
+##  Prerequisites
 
 Before you begin, ensure you have:
 
-- **Android Studio** (Arctic Fox or later recommended)
+- **Android Studio** 
 - **JDK 11** or higher
 - **Android SDK** (API level 24 or higher)
 - **Firebase Account** (free tier available)
 - **Cloudinary Account** (free tier available)
 
-## 🔒 Security Notice
 
-**⚠️ IMPORTANT**: This repository does NOT contain sensitive API keys or configuration files. Before running the app, you must configure the following:
-
-### Required Configuration Files
-
-1. **`app/google-services.json`** - Firebase configuration
-   - This file is **excluded from git** via `.gitignore`
-   - Download it from Firebase Console after creating your project
-   - Place it in `app/google-services.json`
-   - See `app/google-services.json.example` for structure reference
-
-2. **`app/src/main/res/values/strings.xml`** - Cloudinary credentials
-   - Contains placeholders: `YOUR_CLOUD_NAME` and `YOUR_UNSIGNED_UPLOAD_PRESET`
-   - Replace these with your actual Cloudinary credentials
-
-### Files Excluded from Git
-
-The following files are excluded from version control:
-- `app/google-services.json` (Firebase config with API keys)
-- `local.properties` (Android SDK path)
-- All keystore files (`*.jks`, `*.keystore`, `*.key`)
-- Secret property files
-
-### Never Commit
-
-- ❌ Firebase API keys or `google-services.json`
-- ❌ Cloudinary cloud names or API keys in committed files
-- ❌ Keystore files or signing keys
-- ❌ Local SDK paths
-
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -110,23 +75,12 @@ cd Pawstagram
    - Package name: `com.example.pawstagram`
    - Download `google-services.json`
 
-3. **Get SHA-1 Fingerprint**:
-   ```bash
-   ./gradlew signingReport
-   ```
-   - Copy the SHA-1 fingerprint from the output
-
-4. **Add SHA-1 to Firebase**:
-   - In Firebase Console → Project Settings → Your app
-   - Click "Add fingerprint"
-   - Paste your SHA-1 and SHA-256 fingerprints
-
-5. **Place google-services.json**:
-   - **Important**: Copy the downloaded `google-services.json` to `app/google-services.json`
+3. **Place google-services.json**:
+   - Copy the downloaded `google-services.json` to `app/google-services.json`
    - This file contains your Firebase API keys and should NOT be committed to git
    - The repository includes `app/google-services.json.example` as a template only
 
-6. **Enable Firebase Services**:
+4. **Enable Firebase Services**:
    - **Authentication**: Enable Email/Password and Google Sign-In
    - **Firestore**: Create a database in test mode (for development)
 
@@ -138,7 +92,7 @@ cd Pawstagram
 2. **Create Upload Preset**:
    - Go to Settings → Upload
    - Create an **Unsigned Upload Preset**
-   - Name it (e.g., `pawstagram_unsigned`)
+   - Name it (`pawstagram_unsigned`)
    - Set folder: `pawstagram/images`
    - Save
 
@@ -171,7 +125,7 @@ cd Pawstagram
      ./gradlew installDebug
      ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Pawstagram/
@@ -200,79 +154,22 @@ Pawstagram/
 └── README.md
 ```
 
-## ⚙️ Configuration
 
-### Cloudinary Configuration
+## UI Features
 
-Edit `app/src/main/res/values/strings.xml`:
-
-```xml
-<string name="cloudinary_cloud_name">your_cloud_name</string>
-<string name="cloudinary_upload_preset">your_upload_preset</string>
-```
-
-### Theme Colors
-
-Customize colors in `app/src/main/java/com/example/pawstagram/ui/theme/Color.kt`:
-
-- `PrimaryColor`: Orange/Amber (#FFA000)
-- `SecondaryColor`: Yellow (#FDD835)
-- `SecondaryLightColor`: Light Yellow (#FFEB3B)
-- `LikeColor`: Red (#FF0000)
-
-## 🎨 UI Features
-
-- **Bottom Navigation Bar**: Custom yellow theme with orange selected items
 - **Cards**: Clean white cards with subtle borders
 - **Dark Mode**: Fully supported with appropriate color schemes
-- **Animations**: Smooth scroll-to-top, like animations, and transitions
 
-## 📱 App Screens
+
+## App Screens
 
 1. **Sign In/Sign Up Screen**: Authentication with email/password or Google
 2. **Feed Screen**: Browse all posts with like functionality
 3. **Upload Screen**: Add new posts with image, caption, and hashtags
 4. **Navigation Drawer**: User profile and logout
 
-## 🔧 Troubleshooting
+## Screenshots
 
-### Common Issues
 
-1. **"Unknown calling package name" Error**:
-   - Add SHA-1 fingerprint to Firebase Console
-   - Ensure `google-services.json` is in the correct location
-
-2. **Cloudinary Upload Fails**:
-   - Verify cloud name and upload preset in `strings.xml`
-   - Check upload preset is set to "Unsigned"
-   - Verify folder path in Cloudinary settings
-
-3. **Posts Not Appearing**:
-   - Check Firestore security rules
-   - Verify Firestore indexes are created
-   - Check network connectivity
-
-4. **Build Errors**:
-   - Clean and rebuild: `./gradlew clean build`
-   - Invalidate caches in Android Studio
-   - Ensure all dependencies are synced
-
-## 📄 License
-
-This project is open source and available for educational purposes.
-
-## 👨‍💻 Developer
-
-Built with ❤️ using Jetpack Compose and modern Android development practices.
-
-## 🙏 Acknowledgments
-
-- Firebase for authentication and database
-- Cloudinary for image storage
-- Jetpack Compose team for the amazing UI framework
-
----
-
-**Note**: This project uses free-tier services. For production use, consider upgrading to paid plans for better performance and higher limits.
 
 
