@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pawstagram</string>
+    <!-- Replace with your Cloudinary cloud name from https://cloudinary.com/console -->
+    <string name="cloudinary_cloud_name">YOUR_CLOUD_NAME</string>
+    <!-- Replace with your Cloudinary unsigned upload preset name -->
+    <string name="cloudinary_upload_preset">YOUR_UNSIGNED_UPLOAD_PRESET</string>
+</resources>
