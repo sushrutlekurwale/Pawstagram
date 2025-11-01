@@ -1,5 +1,10 @@
 # Pawstagram 📸🐾
 
+<p align="center">
+  <img src="assets/logo.png" alt="Logo" width="150"/>
+</p>
+
+
 Pawstagram is an android app where pet lovers can share cute moments of their pets, Built with Kotlin and Jetpack Compose which focuses on delivering a smooth, modern, and joyful social experience for pet owners.
 
 ##  Features
@@ -170,6 +175,17 @@ Pawstagram/
 
 ## Screenshots
 
+<p>
+  <img src="assets/asset1.jpg" alt="Screenshot" height = "500"/>
+  <img src="assets/asset2.jpg" alt="Screenshot" height = "500"/>
+  <img src="assets/asset3.jpg" alt="Screenshot" height = "500"/>
+  <img src="assets/asset4.jpg" alt="Screenshot" height = "500"/>
+  <img src="assets/asset5.jpg" alt="Screenshot" height = "500"/>
+  <img src="assets/asset6.jpg" alt="Screenshot" height = "500"/>
+</p>
 
+<p align="center">
+  
+</p>
 
 
